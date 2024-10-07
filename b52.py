@@ -13,19 +13,35 @@ def chinh_phuong(n):
     return math.sqrt(n) ==int(math.sqrt(n))
 def nguyen_to(n):
     if n <= 1:
-        return "Không là số nguyên tố"
+        return False
     for i in range(2, int(n**0.5) + 1):
         if n % i == 0:
-            return "Không là số nguyên tố"
-    return "Là số nguyên tố"
+            return False
+    return True
 def tich_so_le(*args):
     tich=1 
-    so_le= False 
     for i in args:
         if i %2 !=0:
-            so_le= True
             tich*= i
         return tich 
+def sum_nguyen_to(a):
+    tong = 0
+    for i in range(2, a):
+        if nguyen_to(i):
+            tong += i
+    return tong
+def sum_chinh_phuong(x):
+    kq=0
+    for i in range(1,x):
+        if chinh_phuong(i):
+            kq+=i
+    return kq
+def sum_uoc_duong(n):
+    S = 0
+    for i in range(1, n + 1):  
+        if n % i == 0:  
+            S += i  
+    return S
 if __name__=="__main__":
     ds=[1,3,5,7]
     print(can_bac_x(4,2))
@@ -33,3 +49,6 @@ if __name__=="__main__":
     print(chinh_phuong(4))
     print(nguyen_to(2))
     print(tich_so_le(*ds))
+    print(sum_nguyen_to(10))
+    print(sum_chinh_phuong(10))
+    print(sum_uoc_duong(10))
