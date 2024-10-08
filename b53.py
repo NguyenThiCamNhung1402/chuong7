@@ -19,17 +19,12 @@ def sum3(n):
     for i in range(1,n+1):
         s+=1/i
     return s
-def giai_thua(n):
-    if n==0 or n==1:
-        return 1
-    kq=1
-    for i in range(2,n+1):
-        kq*=i
-    return kq   
 def sum4(n):
     s=0
+    giathua =1
     for i in range(1,n+1):
-        s+=giai_thua(i)
+        giathua *= i
+        s+=giathua
     return s
 def sum5(n):
     s=1
